@@ -29,6 +29,7 @@ import org.jclouds.openstack.nova.v2_0.extensions.FloatingIPApi;
 import org.jclouds.openstack.nova.v2_0.extensions.HostAdministrationApi;
 import org.jclouds.openstack.nova.v2_0.extensions.HostAggregateApi;
 import org.jclouds.openstack.nova.v2_0.extensions.KeyPairApi;
+import org.jclouds.openstack.nova.v2_0.extensions.OsServicesApi;
 import org.jclouds.openstack.nova.v2_0.extensions.QuotaApi;
 import org.jclouds.openstack.nova.v2_0.extensions.SecurityGroupApi;
 import org.jclouds.openstack.nova.v2_0.extensions.ServerAdminApi;
@@ -201,4 +202,13 @@ public interface NovaApi extends Closeable {
    @Delegate
    Optional<? extends ConsolesApi> getConsolesExtensionForZone(
          @EndpointParam(parser = ZoneToEndpoint.class) @Nullable String zone);
+
+
+   /**
+    * Provides access to OS-Services features.
+    */
+   @Delegate
+   Optional<? extends OsServicesApi> getOsServicesApi(
+         @EndpointParam(parser = ZoneToEndpoint.class) String region);
+
 }

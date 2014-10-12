@@ -110,4 +110,10 @@ public interface ExtensionNamespaces {
     * Consoles extension
     */
    public static final String CONSOLES = "http://docs.openstack.org/compute/ext/os-consoles/api/v2";
+
+   /**
+    * OS-Services extension
+    */
+   public static final String OS_SERVICES = "http://docs.openstack.org/compute/ext/services/api/v2";
+
 }
